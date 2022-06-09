@@ -16,7 +16,36 @@
 
 </head>
 <body>
-    
+    <script>
+        function modalFunction(){
+        const[show, setShow] =useState(false);
+
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+
+        return(
+            <>
+                <Button variant="info" onClike={handleShow}>
+                    Confirm Appointment
+                </Button>
+
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.header closeButton>
+                        <Modal.Title>Appointment Booked!</Modal.Title>
+                    </Modal.header>
+                    <Modal.body>Your appointment has been booked, you will receive an email with your booking info shortly.</Modal.body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+
+            </>
+        );
+        }
+    </script>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-md fixed-top navbar-light bg-info">
         <div class="container-xxl">
@@ -130,8 +159,7 @@
 
         
         <div class="row-sm-12 pt-5">
-            <script src="functionModal.js"></script>
-            <input type="button" onClick= "functionModal();" value ="confirm appointment">
+            <a href="BookingConfirmation.html" class="btn btn-info btn-lg text-white">Confirm Appointment</a>
         
         </div>
 
